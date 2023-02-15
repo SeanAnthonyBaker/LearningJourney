@@ -1,0 +1,8 @@
+use_case_id,use_case_nm,stories_story_id
+1,Log on to AppGyver.com website,1
+2,Register for an account,1
+3,Create a project,1
+4,Download AppGyver viewer app from Google or phone store,1
+5,Launch the application ,1
+6,Enter the QR code on the mobile viewer,1
+7,Mark step as complete,1

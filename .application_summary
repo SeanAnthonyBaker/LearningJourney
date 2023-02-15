@@ -1,0 +1,5 @@
+{
+  "ProjectOverviewURL": "https://us-account-259iwk6t.launchpad.cfapps.us10.hana.ondemand.com/lcapTrackLearning.TrackLearningLaunchpad-1.0.0",
+  "DeployedUTCTime": "2023-02-15T05:50:50.994Z",
+  "ApplicationLogURL": "https://logs.cf.us10-001.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!((query:(match_phrase:(component_name:TrackLearning-srv)))))"
+}

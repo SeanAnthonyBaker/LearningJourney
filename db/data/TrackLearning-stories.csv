@@ -1,0 +1,12 @@
+story_id,story_nm,epics_epic_id
+1,Activate Appgyver composer pro account,1
+2,Log onto SAP API Hub and review Bank API V2,1
+3,Create an Appgyver application “banks”,1
+4,Access API bank data,1
+5,Build your first application,1
+6,Complete learning Journey,1
+7,Create a Hana Cloud environment,2
+8,Install VS code,2
+9,Create a data base,2
+10,Expose Odata services,2
+11,Complete learning Journey,2

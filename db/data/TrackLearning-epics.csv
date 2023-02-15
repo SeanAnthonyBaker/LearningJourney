@@ -1,0 +1,7 @@
+epic_id,epic_nm,epic_short_nm,epic_abbr,epic_id_txt
+1,Build AppGyver composer pro app that reads from SAP API hub,Build AppGyver App,API Hub,1
+2,Build CAP programme that generates a HANA Cloud data base,Gererate HANA Database,Creat DB,2
+3,Build a FIORI application that exposes Odata,Develop Fiori App,Creat Fiori,3
+4,Consume FIORI Odata from Appgyver Composer Pro,Build mobile app to access,Odata,4
+5,Consume HANA Cloud data base from STEAMPUNK,Consume from Steampunk,SteamPunk,5
+6,Consume Steampunk Odata from Appgyver composer pro,Mobile app from Steampunk,SteamPunk,6
