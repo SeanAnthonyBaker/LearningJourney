@@ -1,160 +1,203 @@
 {
-  "_version": "1.49.0",
-  "sap.app": {
-    "id": "project1",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:lrop",
-      "version": "1.8.6",
-      "toolsId": "2c2b14bd-b354-4c4b-801a-69def633152f"
-    },
-    "dataSources": {
-      "mainService": {
-        "uri": "/service/TrackLearning/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "localUri": "localService/metadata.xml",
-          "odataVersion": "4.0"
-        }
-      }
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "flexEnabled": true,
-    "dependencies": {
-      "minUI5Version": "1.110.1",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.ushell": {},
-        "sap.fe.templates": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "project1.i18n.i18n"
-        }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
-      },
-      "@i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "uri": "i18n/i18n.properties"
-      }
-    },
-    "resources": {
-      "css": []
-    },
-    "routing": {
-      "config": {},
-      "routes": [
-        {
-          "pattern": ":?query:",
-          "name": "epicList",
-          "target": "epicList"
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "project1",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
         },
-        {
-          "pattern": "epic({key}):?query:",
-          "name": "epicObjectPage",
-          "target": "epicObjectPage"
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.8.6",
+            "toolsId": "2c2b14bd-b354-4c4b-801a-69def633152f"
         },
-        {
-          "pattern": "epic({key})/stories({key2}):?query:",
-          "name": "storiesObjectPage",
-          "target": "storiesObjectPage"
-        }
-      ],
-      "targets": {
-        "epicList": {
-          "type": "Component",
-          "id": "epicList",
-          "name": "sap.fe.templates.ListReport",
-          "options": {
-            "settings": {
-              "entitySet": "epic",
-              "variantManagement": "Page",
-              "navigation": {
-                "epic": {
-                  "detail": {
-                    "route": "epicObjectPage"
-                  }
+        "dataSources": {
+            "mainService": {
+                "uri": "/service/TrackLearning/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
                 }
-              }
             }
-          }
-        },
-        "epicObjectPage": {
-          "type": "Component",
-          "id": "epicObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "entitySet": "epic",
-              "navigation": {
-                "stories": {
-                  "detail": {
-                    "route": "storiesObjectPage"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "storiesObjectPage": {
-          "type": "Component",
-          "id": "storiesObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "entitySet": "stories"
-            }
-          }
         }
-      }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.110.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.fe.templates": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "project1.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "config": {
+                "flexibleColumnLayout": {
+                    "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+                    "defaultThreeColumnLayoutType": "ThreeColumnsEndExpanded"
+                },
+                "routerClass": "sap.f.routing.Router"
+            },
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "epicList",
+                    "target": [
+                        "epicList"
+                    ]
+                },
+                {
+                    "pattern": "epic({key}):?query:",
+                    "name": "epicObjectPage",
+                    "target": [
+                        "epicList",
+                        "epicObjectPage"
+                    ]
+                },
+                {
+                    "pattern": "epic({key})/stories({key2}):?query:",
+                    "name": "storiesObjectPage",
+                    "target": [
+                        "epicList",
+                        "epicObjectPage",
+                        "storiesObjectPage"
+                    ]
+                }
+            ],
+            "targets": {
+                "epicList": {
+                    "type": "Component",
+                    "id": "epicList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "epic",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "epic": {
+                                    "detail": {
+                                        "route": "epicObjectPage"
+                                    }
+                                }
+                            },
+                            "hideFilterBar": true,
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "columns": {
+                                        "DataField::epic_nm": {
+                                            "availability": "Hidden"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "controlAggregation": "beginColumnPages",
+                    "contextPattern": ""
+                },
+                "epicObjectPage": {
+                    "type": "Component",
+                    "id": "epicObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "epic",
+                            "navigation": {
+                                "stories": {
+                                    "detail": {
+                                        "route": "storiesObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "controlAggregation": "midColumnPages",
+                    "contextPattern": "/epic({key})"
+                },
+                "storiesObjectPage": {
+                    "type": "Component",
+                    "id": "storiesObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "stories"
+                        }
+                    },
+                    "controlAggregation": "endColumnPages",
+                    "contextPattern": "/epic({key})/stories({key2})"
+                }
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {}
+            }
+        },
+        "rootView": {
+            "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+            "type": "XML",
+            "async": true,
+            "id": "appRootView"
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
     }
-  },
-  "sap.fiori": {
-    "registrationIds": [],
-    "archeType": "transactional"
-  }
 }
