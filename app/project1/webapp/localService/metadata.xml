@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="TrackLearningService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="epic" EntityType="TrackLearningService.epic">
+                    <NavigationPropertyBinding Path="stories" Target="stories"/>
+                </EntitySet>
+                <EntitySet Name="stories" EntityType="TrackLearningService.stories">
+                    <NavigationPropertyBinding Path="epics" Target="epic"/>
+                    <NavigationPropertyBinding Path="use_cases" Target="use_cases"/>
+                </EntitySet>
+                <EntitySet Name="use_cases" EntityType="TrackLearningService.use_cases">
+                    <NavigationPropertyBinding Path="stories" Target="stories"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="epic">
+                <Key>
+                    <PropertyRef Name="epic_id"/>
+                </Key>
+                <Property Name="epic_id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="epic_nm" Type="Edm.String" MaxLength="100"/>
+                <Property Name="epic_short_nm" Type="Edm.String" MaxLength="40"/>
+                <Property Name="epic_abbr" Type="Edm.String" MaxLength="20"/>
+                <Property Name="epic_id_txt" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="stories" Type="Collection(TrackLearningService.stories)" Partner="epics">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="stories">
+                <Key>
+                    <PropertyRef Name="story_id"/>
+                </Key>
+                <Property Name="story_id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="story_nm" Type="Edm.String" MaxLength="100"/>
+                <NavigationProperty Name="epics" Type="TrackLearningService.epic" Partner="stories">
+                    <ReferentialConstraint Property="epics_epic_id" ReferencedProperty="epic_id"/>
+                </NavigationProperty>
+                <Property Name="epics_epic_id" Type="Edm.Int32"/>
+                <NavigationProperty Name="use_cases" Type="Collection(TrackLearningService.use_cases)" Partner="stories">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="use_cases">
+                <Key>
+                    <PropertyRef Name="use_case_id"/>
+                </Key>
+                <Property Name="use_case_id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="use_case_nm" Type="Edm.String" MaxLength="100"/>
+                <NavigationProperty Name="stories" Type="TrackLearningService.stories" Partner="use_cases">
+                    <ReferentialConstraint Property="stories_story_id" ReferencedProperty="story_id"/>
+                </NavigationProperty>
+                <Property Name="stories_story_id" Type="Edm.Int32"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
