@@ -181,7 +181,7 @@
                             },
                             "content": {
                                 "header": {
-                                    "visible": false,
+                                    "visible": true,
                                     "anchorBarVisible": false
                                 }
                             },
@@ -228,7 +228,7 @@
                             "navigation": {},
                             "content": {
                                 "header": {
-                                    "visible": false
+                                    "visible": true
                                 }
                             },
                             "editableHeaderContent": false,

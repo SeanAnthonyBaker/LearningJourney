@@ -58,3 +58,41 @@ annotate service.use_cases with @(
             Label : '{i18n>Usecasetitle}',
         },]
 );
+
+annotate service.epic with @(
+    UI.HeaderFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'LearningJourney',
+            ID : 'LearningJourney',
+            Target : '@UI.FieldGroup#LearningJourney',
+        },
+    ],
+    UI.FieldGroup #LearningJourney : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : epic_short_nm,
+                Label : 'Short Name',
+            },],
+    }
+);
+annotate service.stories with @(
+    UI.HeaderFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Tasks for ',
+            ID : 'Tasksfor',
+            Target : '@UI.FieldGroup#Tasksfor',
+        },
+    ],
+    UI.FieldGroup #Tasksfor : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : epics.stories.story_nm,
+            },],
+    }
+);

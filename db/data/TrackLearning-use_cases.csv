@@ -6,3 +6,26 @@ use_case_id,use_case_nm,stories_story_id
 5,Launch the application ,1
 6,Enter the QR code on the mobile viewer,1
 7,Mark step as complete,1
+8,Go to https://api.sap.com/,2
+9,Select S/4HANA Cloud context / API's,2
+10,"Search for ""Bank""",2
+11,Select Bank API oDATA  V2 version (Read),2
+12,Select the configuration tab and copy the sand box URL,2
+13,"Optionally - you can ""try out"" https access to the data",2
+14,Make a note of the API key in the top right Header section of the screen,2
+15,Mark step as complete,2
+16,"Create an AppGyver project in Composer Pro called ""AccessS4HANABankData""",3
+17,Remove default controls from start canvus,3
+18,Mark step as complete,4
+19,"Got to the Data  tab and click on ""add data resource"". Select Odata integration",4
+20,"Enter the base URL copied from API hub (https://,,,,,/api_bank/srvd_a2x/sap/bank/0002)",4
+21,"Enter (APIKey= 'Z8hyBFvAHgFrpa84XVJujajArazUY8v0',  Accept and content-type= application/json(static)",4
+22,Move to get record tab and test connection - on successful retrieval go tp schema tab and save,4
+23,Mark step as complete,4
+24,Go to the Marketplace and install scrollable list view component,5
+25,"Place a title on the page ""S/4HANA Bank Data""",5
+26,Select the scrollable list and move onto canvus,5
+27,Select Object configuration and map from Odata variables,5
+28,Launch the application ,5
+29,Launch AppGyver Mobile app and scan the QR code - test on mobile phone,5
+30,Mark step as complete,5

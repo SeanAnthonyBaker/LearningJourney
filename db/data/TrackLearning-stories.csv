@@ -1,7 +1,7 @@
 story_id,story_nm,epics_epic_id
 1,Activate Appgyver composer pro account,1
 2,Log onto SAP API Hub and review Bank API V2,1
-3,Create an Appgyver application “banks”,1
+3,Create an Appgyver project ,1
 4,Access API bank data,1
 5,Build your first application,1
 6,Complete learning Journey,1
@@ -10,3 +10,16 @@ story_id,story_nm,epics_epic_id
 9,Create a data base,2
 10,Expose Odata services,2
 11,Complete learning Journey,2
+12,Create your HANA cloud trial environment,2
+13,Build your first Cloud Application Programming (CAP) model,2
+14,Deploy your application to HANA,2
+15,Use HANA Cloud Cockpit to load data,2
+16,Build automatic loads into the CAP application,2
+17,Develop your first FIORI application,2
+18,Adust generated FIORI application using annotations and guided development,2
+19,Build basic FIORI application and extend data model,3
+20,Try out flexible programming model(FPM) in sand pit,3
+21,Build a custom FIORI elements page using FPM to build Learning Assignment,3
+22,Build a custom FIORI elements page to assign learning Assignments to Developers,3
+23,Install Oauth security into the application,3
+24,set up roles and test application access restrictions,3
