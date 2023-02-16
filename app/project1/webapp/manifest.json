@@ -44,7 +44,7 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": true,
+        "flexEnabled": false,
         "dependencies": {
             "minUI5Version": "1.110.1",
             "libs": {
@@ -126,7 +126,7 @@
                     "options": {
                         "settings": {
                             "entitySet": "epic",
-                            "variantManagement": "Page",
+                            "variantManagement": "None",
                             "navigation": {
                                 "epic": {
                                     "detail": {
@@ -134,16 +134,31 @@
                                     }
                                 }
                             },
-                            "hideFilterBar": true,
+                            "hideFilterBar": false,
                             "controlConfiguration": {
                                 "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "enableExport": false,
+                                        "personalization": {
+                                            "column": false,
+                                            "filter": false,
+                                            "sort": false
+                                        },
+                                        "quickVariantSelection": {
+                                            "hideTableTitle": false,
+                                            "showCounts": false
+                                        },
+                                        "condensedTableLayout": true,
+                                        "selectionMode": "None"
+                                    },
                                     "columns": {
                                         "DataField::epic_nm": {
-                                            "availability": "Hidden"
+                                            "width": "7cm"
                                         }
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     },
                     "controlAggregation": "beginColumnPages",
@@ -166,10 +181,38 @@
                             },
                             "content": {
                                 "header": {
-                                    "visible": false
+                                    "visible": false,
+                                    "anchorBarVisible": false
                                 }
                             },
-                            "showRelatedApps": false
+                            "showRelatedApps": false,
+                            "variantManagement": "None",
+                            "controlConfiguration": {
+                                "stories/@com.sap.vocabularies.UI.v1.LineItem#ListofStories": {
+                                    "tableSettings": {
+                                        "enableExport": false,
+                                        "enableFullScreen": false,
+                                        "enablePaste": false,
+                                        "personalization": {
+                                            "column": false,
+                                            "filter": false,
+                                            "sort": false
+                                        },
+                                        "quickVariantSelection": {
+                                            "hideTableTitle": false,
+                                            "showCounts": false
+                                        },
+                                        "selectAll": false,
+                                        "selectionMode": "None",
+                                        "condensedTableLayout": true
+                                    },
+                                    "columns": {
+                                        "DataField::story_nm": {
+                                            "width": "7cm"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     },
                     "controlAggregation": "midColumnPages",
@@ -182,7 +225,33 @@
                     "options": {
                         "settings": {
                             "entitySet": "stories",
-                            "navigation": {}
+                            "navigation": {},
+                            "content": {
+                                "header": {
+                                    "visible": false
+                                }
+                            },
+                            "editableHeaderContent": false,
+                            "controlConfiguration": {
+                                "use_cases/@com.sap.vocabularies.UI.v1.LineItem#UseCases": {
+                                    "tableSettings": {
+                                        "enableExport": false,
+                                        "enableFullScreen": false,
+                                        "enablePaste": false,
+                                        "selectAll": false,
+                                        "personalization": {
+                                            "column": false,
+                                            "filter": false,
+                                            "sort": false
+                                        },
+                                        "condensedTableLayout": true,
+                                        "quickVariantSelection": {
+                                            "hideTableTitle": false,
+                                            "showCounts": false
+                                        }
+                                    }
+                                }
+                            }
                         }
                     },
                     "controlAggregation": "endColumnPages",

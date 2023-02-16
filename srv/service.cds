@@ -1,5 +1,3 @@
-using { Bank } from './external/Bank.cds';
-
 using { TrackLearning as my } from '../db/schema';
 
 using TrackLearning from '../db/schema';
