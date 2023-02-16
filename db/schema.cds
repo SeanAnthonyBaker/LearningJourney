@@ -10,7 +10,7 @@ using
     extensible,
     managed,
     temporal
-}   
+}
 from '@sap/cds/common';
 
 entity epics
@@ -59,6 +59,12 @@ entity learning_assignments
     use_cases : Association to one use_cases;
     developers : Association to one developers;
 }
+
+entity DeveloperAssignents as
+    projection on developers;
+
+entity PlannedAssignments as
+    projection on learning_assignments;
 
 type assignment_status : Integer enum
 {
