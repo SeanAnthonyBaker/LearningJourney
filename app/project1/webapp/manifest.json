@@ -110,11 +110,11 @@
                 },
                 {
                     "pattern": "epic({key})/stories({key2}):?query:",
-                    "name": "storiesObjectPage",
+                    "name": "storiesObjectPage_stories",
                     "target": [
                         "epicList",
                         "epicObjectPage",
-                        "storiesObjectPage"
+                        "storiesObjectPage_stories"
                     ]
                 }
             ],
@@ -160,23 +160,29 @@
                             "navigation": {
                                 "stories": {
                                     "detail": {
-                                        "route": "storiesObjectPage"
+                                        "route": "storiesObjectPage_stories"
                                     }
                                 }
-                            }
+                            },
+                            "content": {
+                                "header": {
+                                    "visible": false
+                                }
+                            },
+                            "showRelatedApps": false
                         }
                     },
                     "controlAggregation": "midColumnPages",
                     "contextPattern": "/epic({key})"
                 },
-                "storiesObjectPage": {
+                "storiesObjectPage_stories": {
                     "type": "Component",
-                    "id": "storiesObjectPage",
+                    "id": "storiesObjectPage_stories",
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
-                            "editableHeaderContent": false,
-                            "entitySet": "stories"
+                            "entitySet": "stories",
+                            "navigation": {}
                         }
                     },
                     "controlAggregation": "endColumnPages",

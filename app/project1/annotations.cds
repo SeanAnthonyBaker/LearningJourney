@@ -54,10 +54,6 @@ annotate service.stories with @(
     UI.LineItem #ListofStories : [
         {
             $Type : 'UI.DataField',
-            Value : story_id,
-            Label : 'story_id',
-        },{
-            $Type : 'UI.DataField',
             Value : story_nm,
             Label : 'story_nm',
         },]
@@ -65,3 +61,41 @@ annotate service.stories with @(
 annotate service.epic with {
     epic_id @Common.Text : epic_short_nm
 };
+annotate service.epic with @(
+    UI.HeaderInfo : {
+        TypeName : 'Story',
+        TypeNamePlural : 'Stories',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : epic_short_nm,
+        },
+    }
+);
+annotate service.stories with @(
+    UI.HeaderInfo : {
+        TypeName : 'Learning Requirements',
+        TypeNamePlural : 'use_cases',
+    }
+);
+annotate service.stories with @(
+    UI.Facets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'UseCases',
+            ID : 'UseCases',
+            Target : 'use_cases/@UI.LineItem#UseCases',
+        },
+    ]
+);
+annotate service.use_cases with @(
+    UI.LineItem #UseCases : [
+        {
+            $Type : 'UI.DataField',
+            Value : stories.use_cases.use_case_id,
+            Label : 'use_case_id',
+        },{
+            $Type : 'UI.DataField',
+            Value : stories.use_cases.use_case_nm,
+            Label : 'use_case_nm',
+        },]
+);
