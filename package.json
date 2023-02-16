@@ -53,14 +53,20 @@
     }
   },
   "cds": {
-    "requires": {
-      "[production]": {
-        "db": {
-          "kind": "hana-cloud"
+    "build": {
+      "tasks": [
+        {
+          "for": "hana",
+          "dest": "../db"
+        },
+        {
+          "for": "node-cf"
         }
-      },
+      ]
+    },
+    "requires": {
       "db": {
-        "kind": "sql"
+        "kind": "hana-cloud"
       },
       "app-service": {
         "impl": "@sap/low-code-event-handler"
@@ -68,15 +74,8 @@
       "auth": {
         "kind": "xsuaa"
       },
-      "Bank": {
-        "kind": "odata",
-        "model": "srv/external/Bank",
-        "[production]": {
-          "credentials": {
-            "destination": "apihub_sandbox",
-            "path": "s4hanacloud/sap/opu/odata4/sap/api_bank/srvd_a2x/sap/bank/0001"
-          }
-        }
+      "approuter": {
+        "kind": "cloudfoundry"
       }
     },
     "features": {

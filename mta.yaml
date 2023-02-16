@@ -35,6 +35,7 @@ modules:
     requires:
       - name: TrackLearning-service-uaa
       - name: TrackLearning-service-db
+      - name: TrackLearning-db
   - name: TrackLearning-srv
     type: nodejs
     path: gen/srv
@@ -56,6 +57,7 @@ modules:
       - name: TrackLearning-service-metadata
       - name: TrackLearning-service-connectivity
       - name: TrackLearning-service-logs
+      - name: TrackLearning-db
   - name: TrackLearning-aux-destinations
     type: com.sap.application.content
     parameters:
@@ -107,7 +109,8 @@ modules:
         - bash -c "cd dist && npx bestzip ../../../build/dist/launchpad.zip *"
         - rm -rf dist
       _artifactName: launchpad.zip
-      supported-platforms: []
+      supported-platforms:
+        []
       build-result: ../../build/dist
   - name: TrackLearning-aux-ui-deployer
     type: com.sap.application.content
@@ -123,6 +126,22 @@ modules:
       - name: TrackLearning-service-html5-apps-repo-host
         parameters:
           content-target: true
+
+  - name: TrackLearning
+    type: approuter.nodejs
+    path: app/ # from cds.env.folders. Consider also cds.env.build.target -> gen/app
+    parameters:
+      keep-existing-routes: true
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api # must be used in xs-app.json as well
+          url: ~{srv-url}
+          forwardAuthToken: true
+      - name: TrackLearning-service-uaa
 resources:
   - type: org.cloudfoundry.managed-service
     name: TrackLearning-service-uaa
@@ -133,7 +152,9 @@ resources:
       path: xs-security.json
       config:
         xsappname: TrackLearning-${space}
-        role-collections: []
+        role-collections:
+          []
+        tenant-mode: dedicated
   - type: org.cloudfoundry.managed-service
     name: TrackLearning-service-db
     parameters:
@@ -175,3 +196,8 @@ resources:
       service: html5-apps-repo
       service-plan: app-host
       service-name: TrackLearning-html5-apps-repo-host
+  - name: TrackLearning-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared

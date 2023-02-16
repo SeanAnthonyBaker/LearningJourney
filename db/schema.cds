@@ -1,7 +1,5 @@
 namespace TrackLearning;
 
-using { Bank } from '../srv/external/Bank.cds';
-
 using
 {
     Country,
@@ -12,7 +10,7 @@ using
     extensible,
     managed,
     temporal
-}
+}   
 from '@sap/cds/common';
 
 entity epics
@@ -21,7 +19,7 @@ entity epics
     epic_nm : String(100);
     epic_short_nm : String(40);
     epic_abbr : String(20);
-    epic_id_txt : String(5);
+    epic_id_txt : String(15);
     stories : Composition of many stories on stories.epics = $self;
 }
 
@@ -36,7 +34,7 @@ entity stories
 entity use_cases
 {
     key use_case_id : Integer;
-    use_case_nm : String(100);
+    use_case_nm : String(150);
     stories : Association to one stories;
     learning_assignments : Association to many learning_assignments on learning_assignments.use_cases = $self;
 }
