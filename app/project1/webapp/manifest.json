@@ -23,7 +23,8 @@
                     "odataVersion": "4.0"
                 }
             }
-        }
+        },
+        "title": "Learning Jouney Hierachy"
     },
     "sap.ui": {
         "technology": "UI5",
@@ -42,7 +43,7 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": false,
+        "flexEnabled": true,
         "dependencies": {
             "minUI5Version": "1.110.1",
             "libs": {
