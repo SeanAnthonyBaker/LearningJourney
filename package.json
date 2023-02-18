@@ -22,7 +22,8 @@
     "sqlite3": "^5.0.4"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "deploy": "cds deploy --to hana:Schema"
   },
   "engines": {
     "node": "^16.15"

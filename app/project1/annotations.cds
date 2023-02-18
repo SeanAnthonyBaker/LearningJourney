@@ -5,7 +5,7 @@ annotate service.epic with @(
         {
             $Type : 'UI.DataField',
             Value : epic_nm,
-            Label : '{i18n>Stories}',
+            Label : 'Learning journies',
         },]
 );
 annotate service.epic with @(
@@ -26,7 +26,7 @@ annotate service.stories with @(
         {
             $Type : 'UI.DataField',
             Value : story_nm,
-            Label : '{i18n>Stories}',
+            Label : 'Learning topics',
         },]
 );
 annotate service.epic with @(
@@ -37,7 +37,7 @@ annotate service.epic with @(
 );
 annotate service.stories with @(
     UI.HeaderInfo : {
-        TypeName : '{i18n>LearningRequirements}',
+        TypeName : '',
         TypeNamePlural : '',
     }
 );
@@ -55,7 +55,7 @@ annotate service.use_cases with @(
         {
             $Type : 'UI.DataField',
             Value : stories.use_cases.use_case_nm,
-            Label : '{i18n>Usecasetitle}',
+            Label : 'Learning tasks',
         },]
 );
 
@@ -63,36 +63,19 @@ annotate service.epic with @(
     UI.HeaderFacets : [
         {
             $Type : 'UI.ReferenceFacet',
-            Label : 'LearningJourney',
             ID : 'LearningJourney',
             Target : '@UI.FieldGroup#LearningJourney',
         },
     ],
     UI.FieldGroup #LearningJourney : {
         $Type : 'UI.FieldGroupType',
-        Data : [
-            {
-                $Type : 'UI.DataField',
-                Value : epic_short_nm,
-                Label : 'Short Name',
-            },],
+        Data : [],
     }
 );
 annotate service.stories with @(
-    UI.HeaderFacets : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            Label : 'Tasks for ',
-            ID : 'Tasksfor',
-            Target : '@UI.FieldGroup#Tasksfor',
-        },
-    ],
+    UI.HeaderFacets : [],
     UI.FieldGroup #Tasksfor : {
         $Type : 'UI.FieldGroupType',
-        Data : [
-            {
-                $Type : 'UI.DataField',
-                Value : epics.stories.story_nm,
-            },],
+        Data : [],
     }
 );

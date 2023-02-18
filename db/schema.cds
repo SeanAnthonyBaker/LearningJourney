@@ -60,9 +60,7 @@ entity learning_assignments
     developers : Association to one developers;
 }
 
-entity DeveloperAssignents as
-    projection on developers;
-
+@odata.draft.enabled
 entity PlannedAssignments as
     projection on learning_assignments;
 

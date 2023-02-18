@@ -7,8 +7,6 @@
         "applicationVersion": {
             "version": "0.0.1"
         },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
         "resources": "resources.json",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
@@ -134,7 +132,7 @@
                                     }
                                 }
                             },
-                            "hideFilterBar": false,
+                            "hideFilterBar": true,
                             "controlConfiguration": {
                                 "@com.sap.vocabularies.UI.v1.LineItem": {
                                     "tableSettings": {
@@ -148,8 +146,9 @@
                                             "hideTableTitle": false,
                                             "showCounts": false
                                         },
-                                        "condensedTableLayout": true,
-                                        "selectionMode": "None"
+                                        "condensedTableLayout": false,
+                                        "selectionMode": "None",
+                                        "selectAll": true
                                     },
                                     "columns": {
                                         "DataField::epic_nm": {
@@ -211,6 +210,13 @@
                                             "width": "7cm"
                                         }
                                     }
+                                },
+                                "@com.sap.vocabularies.UI.v1.HeaderFacets": {
+                                    "facets": {
+                                        "LearningJourney": {
+                                            "stashed": false
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -228,7 +234,7 @@
                             "navigation": {},
                             "content": {
                                 "header": {
-                                    "visible": true
+                                    "anchorBarVisible": false
                                 }
                             },
                             "editableHeaderContent": false,
@@ -244,14 +250,15 @@
                                             "filter": false,
                                             "sort": false
                                         },
-                                        "condensedTableLayout": true,
+                                        "condensedTableLayout": false,
                                         "quickVariantSelection": {
                                             "hideTableTitle": false,
                                             "showCounts": false
                                         }
                                     }
                                 }
-                            }
+                            },
+                            "showRelatedApps": false
                         }
                     },
                     "controlAggregation": "endColumnPages",
